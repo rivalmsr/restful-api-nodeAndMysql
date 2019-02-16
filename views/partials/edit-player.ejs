@@ -1,0 +1,55 @@
+<% include partials/header.ejs %>
+<div class="container">
+  <% if(message){ %>
+    <p class="text-center text-danger"><% =message %></p>
+  <% } %>
+
+  <% if(player){ %>
+    <form class="add-plaer-form" action="" method="post" enctype="multipart/form-data">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="first_name">First Name</label>
+          <input type="text" class="form-control" name="first_name" id="first-name" value="<% player.first_name %>" required>
+        </div>
+
+
+        <div class="form-group col-md-4">
+          <label for="last_name">Last Name</label>
+          <input type="text" class="form-control" name="last_name" id="first-name" value="<% player.last_name %>" required>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="number">Number</label>
+          <input type="number" class="form-control" name="number" id="number" placeholder="Number" value="<% player.number %>" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="position">Position</label>
+          <select class="form-control" name="position" id="position" required>
+            <option selected><% =player.position %></option>
+            <option>Goalkeeper</option>
+            <option>Center Back</option>
+            <option>Right Back</option>
+            <option>Left Back</option>
+            <option>Defensive Midfielder</option>
+            <option>Center Midfielder</option>
+            <option>Attacking Midfielder</option>
+            <option>Right Win Forward</option>
+            <option>Left Win Forward</option>
+            <option>Striker</option>
+          </select>
+
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" float-right>Update Player</button>
+    </form>
+  <% } else{ %>
+    <p class="text-center">Player not found. Goal<a href="/add">here</a>to add players</p>
+  <% } %>
+</div>
+
+</div>
+</body>
+</html>
