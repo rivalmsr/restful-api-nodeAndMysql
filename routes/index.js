@@ -7,10 +7,11 @@ module.exports = {
       if(err){
         res.redirect('/');
       }
-      res.render('index.js', {
-        title : Welcome to dbjavascript | View Players,
-        players: result
+      res.render('views/index.ejs', {
+        title : Welcome to Socka | View players
+        ,players: result
       });
-    });
+    });require('./routes/index.js');
+cons
   },
 };
